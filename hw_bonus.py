@@ -10,8 +10,22 @@ longest_consecutive([100, 4, 200, 1, 3, 2]) -> 4
 """
 
 def longest_consecutive(my_list: list[int]) -> int:
-    # write your code here
-    pass
+
+    sequence_val = 0
+
+    for nums in my_list:
+        if nums - 1 not in my_list:
+            current_val = nums
+            sequence_val = 1
+            
+            while current_val + 1 in my_list:
+                current_val += 1
+                sequence_val += 1
+
+    return sequence_val
+
+print(longest_consecutive([100, 4, 200, 1, 3, 2]))
+pass
 
 """
 💎 Exercise-2 (Find missing number):
