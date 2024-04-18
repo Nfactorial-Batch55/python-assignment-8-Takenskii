@@ -26,7 +26,22 @@ find_missing([1, 2, 4]) -> 3
 
 def find_missing(my_list: list[int]) -> int:
     # write your code here
-    pass
+    res = 0
+    my_list.sort()
+    if len(my_list) == 1:
+        return None
+        
+    else: 
+        for i in range(1, len(my_list)):
+            if my_list[0] != 1:
+                res = 1
+            elif my_list[i] - my_list[i - 1] == 2:
+                res = my_list[i] - 1
+
+    return res
+
+print(find_missing([1]))
+pass
 
 
 """
@@ -42,7 +57,14 @@ find_duplicate([1, 3, 4, 2, 2]) -> 2
 
 def find_duplicate(my_list: list[int]) -> int:
     # write your code here
-    pass
+    for i in range(0, len(my_list)):
+        for j in range(i + 1, len(my_list)):
+            if my_list[i] == my_list[j]:
+                return my_list[i]
+    return -1    
+
+print(find_duplicate([1, 1]))
+pass
 
 
 """
